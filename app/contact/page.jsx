@@ -14,17 +14,17 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    info: "+123 456 7890",
+    info: "+63 9483 474 194",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    info: "info@example.com",
+    info: "cmitzmia@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    info: "1234 Main St, Anytown, USA",
+    info: "Davao City, Philippines",
   },
 ];
 
@@ -42,7 +42,7 @@ const Contact = () => {
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] roundex-xl">
               <h3 className="text-4xl text-accent">Let`s work together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Need a Wordpress Developer / Web Developer to work with? You can send me an Email using the email provided(form below is on progress). Have a nice day!
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

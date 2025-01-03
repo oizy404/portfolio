@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn} from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedinIn} from 'react-icons/fa';
 
 const socials = [
   {
@@ -9,7 +9,11 @@ const socials = [
   {
     icon: <FaLinkedinIn />,
     path: "https://www.linkedin.com/in/mitz-mia-castillo-8919b817b/"
-  }
+  },
+  // {
+  //   icon: <FaFacebook />,
+  //   path: "https://www.facebook.com/darkezzz.z"
+  // }
 ]
 const Social = ({containerStyles, iconStyles}) => {
   return (

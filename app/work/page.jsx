@@ -22,29 +22,32 @@ import WorkSliderButtons from "@/components/WorkSliderButtons";
 const projects = [
   {
     num: '01',
-    category: 'frontend',
+    category: 'Fullstack',
     title: 'project 1',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    description: "Redesign Wordpress Woocommerce Site",
     stack: [
-      { name: "Html 5" },
-      { name: "Css 3 "},
-      { name: "Javascript"}
+      { name: "Elementor Page Builder" },
+      { name: "Astra Theme"},
+      { name: "Css"},
+      { name: "JQuery"},
+      { name: "PHP"}
     ],
-    image: '/assets/work/thumb1.png',
+    image: '/assets/work/project01.png',
     live: "",
     github: "",
   },
   {
     num: '02',
-    category: 'fullstack',
+    category: 'frontend',
     title: 'project 2',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    description: "Redesign Wordpress Woocommerce Site",
     stack: [
-      { name: "Next.js" },
-      { name: "Tailwind.css"},
-      { name: "Node.js"}
+      { name: "GenerateBlocks Page Builder" },
+      { name: "GeneratePress Theme"},
+      { name: "Css"},
+      { name: "JQuery"}
     ],
-    image: '/assets/work/thumb2.png',
+    image: '/assets/work/project02.png',
     live: "",
     github: "",
   },
@@ -52,14 +55,15 @@ const projects = [
     num: '03',
     category: 'fullstack',
     title: 'project 3',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    description: "Build an Automated Clinic Management Sytem",
     stack: [
       { name: "Laravel PHP" },
+      { name: "MySQL SQL" },
       { name: "Bootstrap"},
       { name: "Css 3 "},
       { name: "JQuery"}
     ],
-    image: '/assets/work/thumb2.png',
+    image: '/assets/work/project03.png',
     live: "",
     github: "",
   }
@@ -87,7 +91,8 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-              { /* outline num */ }
+            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">Sample Works</h2>
+            { /* outline num */ }
               <div className="text-8xl leading-none font-extrabold text-transparent-outline">
                 {project.num}
               </div>
@@ -96,7 +101,7 @@ const Work = () => {
               { /* project description */}
               <p className="text-white/60">{project.description}</p>
               { /* stack */}
-              <ul className="flex gap-4">
+              <ul className="gap-4">
                 {project.stack.map((item, index)=>{
                   return (
                     <li key={index} className="text-xl text-accent">
