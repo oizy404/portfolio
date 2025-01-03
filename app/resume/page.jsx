@@ -13,34 +13,34 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs }from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiJquery, SiGithub, SiGit, SiBitbucket, SiWordpress, SiWoocommerce, SiBootstrap, SiMysql, SiPostman }from "react-icons/si";
 
 const about = {
   title: 'About me',
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description: "Hello! I'm Mitz Castillo, a passionate Web Developer and WordPress Developer based in Davao City, Philippines. I have been a WordPress Developer for two years and have gained extensive experience handling tasks and projects as a full-stack developer. I am adaptable to various tools and technologies and always open to learning new skills and embracing opportunities for growth. My goal is to provide exceptional web solutions that meet clients' needs and exceed their expectations.",
   info: [
     {
-      fieldName: "Name",
+      fieldName: "Name:",
       fieldValue: "Mitz Castillo",
     },
     {
-      fieldName: "Phone",
+      fieldName: "Phone:",
       fieldValue: "+63 9483 474 194",
     },
     {
-      fieldName: "Experience",
+      fieldName: "Experience:",
       fieldValue: "2 Years",
     },
     {
-      fieldName: "Nationality",
+      fieldName: "Nationality:",
       fieldValue: "Filipino",
     },
     {
-      fieldName: "Email",
+      fieldName: "Email:",
       fieldValue: "cmitzmia@gmail.com",
     },
     {
-      fieldName: "Language",
+      fieldName: "Language:",
       fieldValue: "English",
     },
   ]
@@ -49,77 +49,37 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description: "",
   items: [
     {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
+      company: " --- ",
+      position: "Wordpress Fullstack Developer",
+      duration: "2022-Present"
     },
     {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
-    },
-    {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
-    },
-    {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
-    },
-    {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
-    },
-    {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
-    },
-    {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
-    },
-    {
-      company: "Lorem Ipsum",
-      position: "Dolor Sit Amet",
-      duration: "0000-Present"
+      company: "Assumption College of Davao",
+      position: "Trainee Web Developer",
+      duration: "2021-2022"
     },
   ]
 }
 
 const education = {
   icon: "/assets/resume/badge.svg",
-  title: "My Experience",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  title: "Education",
+  description: "",
   items: [
     {
-      institution: "Lorem Ipsum",
-      degree: "Dolor Sit Amet",
-      duration: "0000"
-    },
-    {
-      institution: "Lorem Ipsum",
-      degree: "Dolor Sit Amet",
-      duration: "0000"
-    },
-    {
-      institution: "Lorem Ipsum",
-      degree: "Dolor Sit Amet",
-      duration: "0000"
+      institution: "Assumption College of Davao",
+      degree: "Bachelor of Science in Information Technology",
+      duration: "2018-2022"
     },
   ]
 }
 
 const skills = {
-  title: "My Skills",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  title: "Tech & Tools",
+  description: "",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -130,24 +90,56 @@ const skills = {
       name: "css 3",
     },
     {
-      icon: <FaJs />,
-      name: "javascript",
+      icon: <SiBootstrap />,
+      name: "Bootstrap",
+    },
+    {
+      icon: <SiJquery />,
+      name: "JQuery",
     },
     {
       icon: <FaReact />,
-      name: "react.js",
+      name: "basic react.js",
     },
     {
       icon: <FaNodeJs />,
-      name: "node.js",
+      name: "basic node.js",
+    },
+    {
+      icon: <SiNextdotjs />,
+      name: "basic next.js",
     },
     {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
     },
     {
-      icon: <SiNextdotjs />,
-      name: "next.js",
+      icon: <SiMysql />,
+      name: "MySql Sql",
+    },
+    {
+      icon: <SiWordpress />,
+      name: "wordpress",
+    },
+    {
+      icon: <SiWoocommerce />,
+      name: "woocommerce",
+    },
+    {
+      icon: <SiGithub />,
+      name: "github",
+    },
+    {
+      icon: <SiGit />,
+      name: "git",
+    },
+    {
+      icon: <SiBitbucket />,
+      name: "bitbucket",
+    },
+    {
+      icon: <SiPostman />,
+      name: "postman",
     },
 
   ]
@@ -173,10 +165,10 @@ const Resume = () => {
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="skills">Tech & Tools</TabsTrigger>
+            <TabsTrigger value="experience">Experience</TabsTrigger>
           </TabsList>
           {/* content */}
           <div className="min-h-[70vh] w-full">
@@ -189,12 +181,12 @@ const Resume = () => {
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index)=>{
                       return (
-                        <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <li key={index} className="bg-[#232329] h-[184px] py-3 px-3 rounded-xl flex flex-col justify-start items-center lg:items-start gap-1">
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[6px] text-center lg:tetx-left">{item.position}</h3>
-                          <div className="flex items-center gap-3">
+                          <h6 className="text-md max-w-[260px] min-h-[6px] text-left lg:text-left">{item.position}</h6>
+                          <div className="flex items-center gap-2">
                             {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            {/* <span className="w-[6px] h-[6px] rounded-full bg-accent"></span> */}
                             <p className="text-white/60">{item.company}</p>
                           </div>
                         </li>
@@ -213,12 +205,12 @@ const Resume = () => {
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index)=>{
                       return (
-                        <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <li key={index} className="bg-[#232329] h-[184px] py-3 px-3 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[6px] text-center lg:tetx-left">{item.degree}</h3>
-                          <div className="flex items-center gap-3">
+                          <h6 className="text-md max-w-[260px] min-h-[6px] text-left lg:text-left">{item.degree}</h6>
+                          <div className="flex items-center gap-2">
                             {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            {/* <span className="w-[6px] h-[6px] rounded-full bg-accent"></span> */}
                             <p className="text-white/60">{item.institution}</p>
                           </div>
                         </li>
