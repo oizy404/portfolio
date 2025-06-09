@@ -66,6 +66,21 @@ const projects = [
     image: '/assets/work/project03.png',
     live: "",
     github: "",
+  },
+  {
+    num: '04',
+    category: 'frontend',
+    title: 'project 4',
+    description: "Design Wordpress Website using Elementor Page Builder from Figma Design and Setup Contact Forms",
+    stack: [
+      { name: "Elementor Page Builder" },
+      { name: "Blocksy Theme"},
+      { name: "Css"},
+      { name: "JQuery"}
+    ],
+    image: '/assets/work/project04.png',
+    live: "",
+    github: "",
   }
 ];
 
