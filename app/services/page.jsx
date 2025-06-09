@@ -69,6 +69,11 @@ const services = [
     title: "Woocommerce Maintenance & Support",
     description: "Providing ongoing support and maintenance for WooCommerce stores, including updates, backups, and troubleshooting."
   },
+  {
+    num: "13",
+    title: "Setup or Create Contact Forms",
+    description: "Setting up or creating contact forms for clients using various plugins and services."
+  },
 ];
 const Services = () => {
   return (
