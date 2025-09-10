@@ -230,7 +230,7 @@ const Resume = () => {
               About <span className="text-accent">Me</span>
             </h1>
             <p className="text-white/80 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-              Passionate WordPress Developer with 2+ years of experience creating exceptional web solutions.
+              Passionate WordPress Developer with 3+ years of experience creating exceptional web solutions.
               Explore my journey, skills, and achievements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
