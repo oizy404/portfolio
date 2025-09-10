@@ -428,7 +428,7 @@ const Work = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Let's collaborate to bring your vision to life. I'm here to help you create
+              Let`s collaborate to bring your vision to life. I`m here to help you create
               exceptional web solutions that drive results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

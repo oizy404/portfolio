@@ -591,10 +591,10 @@ const Resume = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-4xl font-bold text-white mb-6">
-              Let's Work Together
+              Let`s Work Together
             </h3>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Ready to bring your project to life? I'm always excited to work on new challenges
+              Ready to bring your project to life? I`m always excited to work on new challenges
               and help clients achieve their goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
