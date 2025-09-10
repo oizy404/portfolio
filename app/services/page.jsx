@@ -269,7 +269,7 @@ const Services = () => {
               Additional Services
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              Extra services to enhance your website's functionality and user experience
+              Extra services to enhance your website`s functionality and user experience
             </p>
           </motion.div>
 
@@ -303,8 +303,8 @@ const Services = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss your requirements and create something amazing together.
-              I'm here to help bring your vision to life.
+              Let`s discuss your requirements and create something amazing together.
+              I`m here to help bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact">

@@ -143,7 +143,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="h1 mb-6 mt-4"
               >
-                Hello I'm <br/> 
+                Hello I`m <br/> 
                 <span className="text-accent relative">
                   Mitz Mia Castillo
                   <motion.div
