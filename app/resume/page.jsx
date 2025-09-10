@@ -234,7 +234,7 @@ const Resume = () => {
               Passionate WordPress Developer with 2+ years of experience creating exceptional web solutions.
               Explore my journey, skills, and achievements.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact">
                 <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
                   <span>Get In Touch</span>
@@ -596,7 +596,7 @@ const Resume = () => {
               Ready to bring your project to life? I'm always excited to work on new challenges
               and help clients achieve their goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact">
                 <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
                   <span>Start a Project</span>
