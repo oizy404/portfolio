@@ -22,7 +22,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaGlobe,
-  FaCalendarAlt,
   FaAward,
 } from "react-icons/fa";
 
@@ -240,10 +239,12 @@ const Resume = () => {
                   <span>Get In Touch</span>
                 </Button>
               </Link>
-              {/* <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
-                <FaDownload className="text-lg" />
-                <span>Download CV</span>
-              </Button> */}
+              <a href="/assets/Mitz.pdf" download="Mitz_Castillo_CV.pdf">
+                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
+                  <FaDownload className="text-lg" />
+                  <span>Download CV</span>
+                </Button>
+              </a>
             </div>
           </motion.div>
         </div>

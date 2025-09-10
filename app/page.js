@@ -177,10 +177,12 @@ const Home = () => {
                       <span>View My Work</span>
                     </Button>
                   </Link>
-                  <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
-                    <span>Download CV</span>
-                    <FiDownload />
-                  </Button>
+                  <a href="/assets/Mitz.pdf" download="Mitz_Castillo_CV.pdf">
+                    <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
+                      <span>Download CV</span>
+                      <FiDownload />
+                    </Button>
+                  </a>
                 </div>
                 
                 {/* <div className="mb-8 xl:mb-0">
