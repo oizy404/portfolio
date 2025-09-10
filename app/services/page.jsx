@@ -155,7 +155,7 @@ const Services = () => {
               Comprehensive WordPress and WooCommerce development services to bring your digital vision to life.
               From custom themes to e-commerce solutions, I deliver quality results that drive success.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact">
                 <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
                   <span>Get Started</span>
