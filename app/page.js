@@ -51,10 +51,6 @@ const skills = {
       name: "tailwind.css",
     },
     {
-      icon: <FaReact />,
-      name: "basic react.js",
-    },
-    {
       icon: <FaNodeJs />,
       name: "basic node.js",
     },

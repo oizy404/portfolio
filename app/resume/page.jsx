@@ -150,8 +150,7 @@ const skills = {
         { icon: <FaHtml5 />, name: "HTML5", level: "Advanced" },
         { icon: <FaCss3 />, name: "CSS3", level: "Advanced" },
         { icon: <FaJs />, name: "JavaScript", level: "Intermediate" },
-        { icon: <FaReact />, name: "React.js", level: "Intermediate" },
-        { icon: <SiNextdotjs />, name: "Next.js", level: "Intermediate" },
+        { icon: <SiNextdotjs />, name: "Next.js", level: "Basic" },
         { icon: <SiTailwindcss />, name: "Tailwind CSS", level: "Advanced" },
         { icon: <SiBootstrap />, name: "Bootstrap", level: "Advanced" },
         { icon: <SiJquery />, name: "jQuery", level: "Advanced" },
@@ -161,7 +160,7 @@ const skills = {
       title: "Backend Development",
       skills: [
         { icon: <SiPhp />, name: "PHP", level: "Advanced" },
-        { icon: <FaNodeJs />, name: "Node.js", level: "Intermediate" },
+        { icon: <FaNodeJs />, name: "Node.js", level: "Basic" },
         { icon: <SiMysql />, name: "MySQL", level: "Advanced" },
       ]
     },
