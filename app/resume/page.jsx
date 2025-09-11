@@ -29,7 +29,7 @@ import { SiTailwindcss, SiNextdotjs, SiJquery, SiGithub, SiGit, SiBitbucket, SiW
 
 const about = {
   title: 'About Me',
-  description: "Hello! I'm Mitz Castillo, a passionate Web Developer and WordPress Developer based in Davao City, Philippines. I have been a WordPress Developer for three years and have gained extensive experience handling tasks and projects as a full-stack developer. I am adaptable to various tools and technologies and always open to learning new skills and embracing opportunities for growth. My goal is to provide exceptional web solutions that meet clients' needs and exceed their expectations.",
+  description: "Hello! I'm Mitz Castillo, a passionate Web Developer and WordPress Developer based in Davao City, Philippines. I have been a WordPress Developer for three years and have gained extensive experience handling tasks and projects as a full-stack developer. Currently working as a Freelance WordPress Developer since April 2023, I specialize in custom WordPress development, WooCommerce solutions, and website optimization. I am adaptable to various tools and technologies and always open to learning new skills and embracing opportunities for growth. My goal is to provide exceptional web solutions that meet clients' needs and exceed their expectations.",
   info: [
     {
       fieldName: "Full Name",
@@ -70,24 +70,46 @@ const experience = {
   description: "Professional journey and career milestones in web development and WordPress development.",
   items: [
     {
-      company: "Freelance",
-      position: "WordPress Fullstack Developer",
-      duration: "2022 - Present",
-      description: "Developing custom WordPress themes and plugins, WooCommerce solutions, and full-stack web applications. Working with clients to deliver high-quality, responsive websites that meet business requirements.",
+      company: "",
+      position: "Freelance WordPress Developer",
+      duration: "2024-2025",
+      description: "Freelance WordPress development services specializing in custom implementations and client collaboration.",
       achievements: [
-        "Built custom WordPress websites",
-        "Developed custom WooCommerce solutions",
-        "Maintained client satisfaction rate"
+        "Apply Figma designs accurately to WordPress websites",
+        "Fix WordPress Issues",
+        "Collaborate directly with clients"
       ]
     },
     {
-      company: "Assumption College of Davao",
-      position: "Trainee Web Developer",
-      duration: "2021 - 2022",
-      description: "Completed comprehensive web development training program focusing on modern web technologies, responsive design, and best practices in software development.",
+      company: "",
+      position: "WordPress Woocommerce Developer",
+      duration: "2022 - 2025",
+      description: "Full-stack WordPress and WooCommerce development with focus on maintenance, customization, and optimization.",
       achievements: [
-        "Completed 500+ hours of training",
-        "Learned modern web development stack",
+        "Maintain & Build WordPress/WooCommerce Websites",
+        "Update WordPress/WooCommerce Website",
+        "Redesign WordPress/WooCommerce Websites",
+        "Fix Front end and Backend Issues",
+        "Build custom features and plugin customization",
+        "Theme customization",
+        "API integration and payment method integration",
+        "Ajax and Webhook Integration",
+        "Manage multiple WordPress/WooCommerce sites using different hosting server",
+        "Apply on page SEO practices",
+        "Review and test web implementations",
+        "Communicate directly with the clients"
+      ]
+    },
+    {
+      company: "",
+      position: "Trainee Web Developer",
+      duration: "2021-2022",
+      description: "Completed comprehensive web development training with hands-on project experience.",
+      achievements: [
+        "Create a Performance Evaluation System, using the following:",
+        "LARAVEL Framework",
+        "HTML5 & CSS",
+        "JS"
       ]
     },
   ]
