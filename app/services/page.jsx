@@ -367,7 +367,7 @@ const Services = () => {
               </h2>
             </div>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              Search Engine Optimization services to improve your website's visibility and drive organic traffic
+              Search Engine Optimization services to improve your website`s visibility and drive organic traffic
             </p>
           </motion.div>
 
@@ -403,7 +403,7 @@ const Services = () => {
               Additional Services
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              Extra services to enhance your website's functionality and user experience
+              Extra services to enhance your website`s functionality and user experience
             </p>
           </motion.div>
 
