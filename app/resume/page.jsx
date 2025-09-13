@@ -37,7 +37,7 @@ const about = {
       icon: <FaUser className="text-accent" />
     },
     {
-      fieldName: "Phone",
+      fieldName: "WhatsApp",
       fieldValue: "+63 9483 474 194",
       icon: <FaPhone className="text-accent" />
     },
