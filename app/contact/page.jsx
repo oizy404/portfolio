@@ -13,7 +13,7 @@ import { SelectGroup, SelectLabel } from "@radix-ui/react-select";
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone",
+    title: "WhatsApp",
     info: "+63 9483 474 194",
   },
   {
