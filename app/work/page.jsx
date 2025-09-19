@@ -27,55 +27,6 @@ import WorkSliderButtons from "@/components/WorkSliderButtons";
 const projects = [
   {
     num: '01',
-    category: 'WordPress Development',
-    title: 'E-Commerce Website Redesign',
-    description: "Complete redesign and development of a WordPress WooCommerce e-commerce website with modern UI/UX, improved performance, and enhanced user experience. Implemented custom product pages, checkout optimization, and mobile-responsive design.",
-    features: [
-      "Custom WooCommerce theme development",
-      "Mobile-responsive design",
-      "Performance optimization",
-      "SEO-friendly structure",
-      "Payment gateway integration"
-    ],
-    stack: [
-      { name: "WordPress", icon: <FaWordpress /> },
-      { name: "Elementor", icon: <SiElementor /> },
-      { name: "CSS3", icon: <FaCss3Alt /> },
-      { name: "jQuery", icon: <SiJquery /> },
-      { name: "PHP", icon: <FaPhp /> }
-    ],
-    image: '/assets/work/project01.png',
-    live: "",
-    github: "",
-    duration: "3 weeks",
-    client: "E-commerce Business",
-    year: "2024"
-  },
-  {
-    num: '02',
-    category: 'Frontend Development',
-    title: 'Business Website Redesign',
-    description: "Modern business website redesign using GeneratePress theme and GenerateBlocks. Focus on clean design, fast loading times, and conversion optimization with strategic call-to-action placement.",
-    features: [
-      "Custom block-based design",
-      "Fast loading performance",
-      "Contact form integration"
-    ],
-    stack: [
-      { name: "WordPress", icon: <FaWordpress /> },
-      { name: "GenerateBlocks", icon: <SiElementor /> },
-      { name: "CSS3", icon: <FaCss3Alt /> },
-      { name: "jQuery", icon: <SiJquery /> }
-    ],
-    image: '/assets/work/project02.png',
-    live: "",
-    github: "",
-    duration: "2 weeks",
-    client: "Local Business",
-    year: "2024"
-  },
-  {
-    num: '03',
     category: 'Full-Stack Development',
     title: 'Clinic Management System',
     description: "Comprehensive automated clinic management system built with Laravel PHP framework. Features include patient management, appointment scheduling, medical records, billing system, and reporting dashboard.",
@@ -93,7 +44,7 @@ const projects = [
       { name: "CSS3", icon: <FaCss3Alt /> },
       { name: "jQuery", icon: <SiJquery /> }
     ],
-    image: '/assets/work/project03.png',
+    image: '/assets/work/1.png',
     live: "",
     github: "",
     duration: "6 months",
@@ -101,7 +52,7 @@ const projects = [
     year: "2022"
   },
   {
-    num: '04',
+    num: '02',
     category: 'WordPress Development',
     title: 'Corporate Website from Figma',
     description: "Professional corporate website development from Figma design mockups using Elementor page builder. Implemented pixel-perfect design with custom animations, contact forms, and content management system.",
@@ -110,7 +61,8 @@ const projects = [
       "Custom animations and interactions",
       "Contact form integration",
       "Content management system",
-      "Multi-page architecture"
+      "Multi-page architecture",
+      "Plugin Customization"
     ],
     stack: [
       { name: "WordPress", icon: <FaWordpress /> },
@@ -118,13 +70,114 @@ const projects = [
       { name: "CSS3", icon: <FaCss3Alt /> },
       { name: "jQuery", icon: <SiJquery /> }
     ],
-    image: '/assets/work/project04.png',
+    image: '/assets/work/2.png',
     live: "",
     github: "",
     duration: "3 weeks",
-    client: "Corporate Client",
+    client: "Upwork Client",
     year: "2025"
-  }
+  },
+  {
+    num: '03',
+    category: 'Wordpress Redesign',
+    title: 'Blog Redesign',
+    description: "A complete redesign of the website`s blog section, including the Header, Footer, Blog Listing Page, and Single Blog Page. The goal was to deliver a modern, responsive, and user-friendly interface that improves readability, navigation, and overall engagement.",
+    features: [
+      "Custom WordPress theme customization",
+      "Redesigned header and footer for better branding",
+      "Responsive blog listing and single post layouts",
+      "Enhanced SEO structure for better visibility"
+    ],
+    stack: [
+      { name: "WordPress", icon: <FaWordpress /> },
+      { name: "Elementor", icon: <SiElementor /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "jQuery", icon: <SiJquery /> }
+    ],
+    image: '/assets/work/3.png',
+    live: "",
+    github: "",
+    duration: "2 weeks",
+    client: "Upwork Client",
+    year: "2025"
+  },
+  {
+    num: '04',
+    category: 'Wordpress Redesign',
+    title: 'Home Page & Blog Redesign',
+    description: "A complete redesign of the website`s homepage and blog section, including the Header, Footer, Blog Listing Page, and Single Blog Page. The goal was to deliver a modern, responsive, and user-friendly interface that improves readability, navigation, and overall engagement.",
+    features: [
+      "Custom WordPress theme customization",
+      "Redesigned header and footer for better branding",
+      "Redesigned homepage and add motion effects",
+      "Responsive blog listing and single post layouts",
+      "Enhanced SEO structure for better visibility"
+    ],
+    stack: [
+      { name: "WordPress", icon: <FaWordpress /> },
+      { name: "Elementor", icon: <SiElementor /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "jQuery", icon: <SiJquery /> }
+    ],
+    image: '/assets/work/4.png',
+    live: "",
+    github: "",
+    duration: "1 week",
+    client: "Upwork Client",
+    year: "2025"
+  },
+  {
+    num: '05',
+    category: 'WordPress Development',
+    title: 'Develop WordPress Website from Figma',
+    description: "Converted Figma design mockups into a fully functional WordPress website using Elementor. Delivered a responsive, pixel-perfect layout with smooth animations, optimized performance, and easy content management.",
+    features: [
+      "Responsive, pixel-perfect implementation from Figma",
+      "Develop Homepage",
+      "Develop Blog Page",
+      "Develop Sinle Post Page",
+      "Custom animations and interactive elements",
+      "Cross-browser and mobile compatibility"
+    ],
+    stack: [
+      { name: "WordPress", icon: <FaWordpress /> },
+      { name: "Elementor", icon: <SiElementor /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "jQuery", icon: <SiJquery /> }
+    ],
+    image: '/assets/work/5.png',
+    live: "",
+    github: "",
+    duration: "4days",
+    client: "Upwork Client",
+    year: "2025"
+  },
+  {
+    num: '06',
+    category: 'WordPress Redesign',
+    title: 'Redesign Existing Website',
+    description: "Redesigned the homepage and created a modern contact page to improve branding, usability, and lead generation. Focused on delivering a clean, responsive design with optimized user experience.",
+    features: [
+      "Modern homepage redesign with improved layout",
+      "Custom-designed contact page with form integration",
+      "Responsive design across all devices",
+      "Enhanced branding and visual consistency",
+      "Optimized performance and fast loading speed"
+    ],
+    stack: [
+      { name: "WordPress", icon: <FaWordpress /> },
+      { name: "Elementor", icon: <SiElementor /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "jQuery", icon: <SiJquery /> }
+    ],
+    image: '/assets/work/6.png',
+    live: "",
+    github: "",
+    duration: "1 day",
+    client: "Upwork Client",
+    year: "2025"
+  },
+
 ];
 
 // Animation variants
