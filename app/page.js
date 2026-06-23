@@ -1,316 +1,227 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
+import { FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiJquery,
+  SiGithub,
+  SiGit,
+  SiBitbucket,
+  SiWordpress,
+  SiWoocommerce,
+  SiBootstrap,
+  SiMysql,
+  SiPostman,
+  SiPhp,
+  SiFigma,
+  SiCanva,
+} from "react-icons/si";
 
+import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-} from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiJquery, SiGithub, SiGit, SiBitbucket, SiWordpress, SiWoocommerce, SiBootstrap, SiMysql, SiPostman, SiPhp, SiFigma, SiCanva }from "react-icons/si";
 
-//components
-import Social from "@/components/Social";
 import Photo from "@/components/Photo";
-import Stats from "@/components/Stats";
+import Social from "@/components/Social";
+import Section from "@/components/shared/Section";
+import SectionHeading from "@/components/shared/SectionHeading";
+import Reveal from "@/components/shared/Reveal";
+import CTA from "@/components/shared/CTA";
+import { GlowOrb, DotGrid } from "@/components/shared/Decorations";
+import { staggerContainer, staggerItem } from "@/lib/motion";
 
+// ---- Content (unchanged) ----------------------------------------------------
 const skills = {
   title: "TECH & TOOLS",
-  description: "",
+  description: "Technologies and tools I use to bring ideas to life",
   skillList: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css 3",
-    },
-    {
-      icon: <SiJquery />,
-      name: "JQuery",
-    },
-    {
-      icon: <SiBootstrap />,
-      name: "Bootstrap",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "basic node.js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "basic next.js",
-    },
-    {
-      icon: <SiPhp />,
-      name: "PHP",
-    },
-    {
-      icon: <SiMysql />,
-      name: "MySql Sql",
-    },
-    {
-      icon: <SiWordpress />,
-      name: "wordpress",
-    },
-    {
-      icon: <SiWoocommerce />,
-      name: "woocommerce",
-    },
-    {
-      icon: <SiGithub />,
-      name: "github",
-    },
-    {
-      icon: <SiGit />,
-      name: "git",
-    },
-    {
-      icon: <SiBitbucket />,
-      name: "bitbucket",
-    },
-    {
-      icon: <SiPostman />,
-      name: "postman",
-    },
-    {
-      icon: <SiFigma />,
-      name: "basic figma",
-    },
-    {
-      icon: <SiCanva />,
-      name: "canva",
-    },
-  ]
-}
+    { icon: <FaHtml5 />, name: "html 5" },
+    { icon: <FaCss3 />, name: "css 3" },
+    { icon: <SiJquery />, name: "JQuery" },
+    { icon: <SiBootstrap />, name: "Bootstrap" },
+    { icon: <SiTailwindcss />, name: "tailwind.css" },
+    { icon: <FaNodeJs />, name: "basic node.js" },
+    { icon: <SiNextdotjs />, name: "basic next.js" },
+    { icon: <SiPhp />, name: "PHP" },
+    { icon: <SiMysql />, name: "MySql Sql" },
+    { icon: <SiWordpress />, name: "wordpress" },
+    { icon: <SiWoocommerce />, name: "woocommerce" },
+    { icon: <SiGithub />, name: "github" },
+    { icon: <SiGit />, name: "git" },
+    { icon: <SiBitbucket />, name: "bitbucket" },
+    { icon: <SiPostman />, name: "postman" },
+    { icon: <SiFigma />, name: "basic figma" },
+    { icon: <SiCanva />, name: "canva" },
+  ],
+};
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="h-screen flex items-center relative overflow-hidden"
-      >
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/90 z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent/10 z-1"></div>
-        
-        <div className="container mx-auto h-full relative z-10">
-          <div className="flex flex-col xl:flex-row items-center xl:gap-16 justify-center xl:justify-between xl:pt-8 xl:pb-24 h-full max-w-7xl mx-auto">
-            {/* text */}
+    <>
+      {/* ===================== HERO ===================== */}
+      <section className="relative overflow-hidden">
+        {/* Layered background: radial accent glow + faint grid + ambient orbs */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-radial-accent"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-grid [background-size:64px_64px] opacity-[0.4] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"
+        />
+        <DotGrid className="text-white/[0.04] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+        <GlowOrb className="left-[-8%] top-[8%] h-[380px] w-[380px] bg-accent/15" />
+        <GlowOrb className="bottom-[6%] right-[-6%] h-[420px] w-[420px] bg-accent/10" />
+
+        <div className="container relative z-10">
+          <div className="flex min-h-[calc(100svh-96px)] flex-col items-center justify-center gap-10 py-16 lg:flex-row lg:justify-between lg:gap-12 lg:py-0">
+            {/* Text */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-center xl:text-left order-2 xl:order-none flex-1 xl:max-w-2xl xl:pr-8"
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="order-2 max-w-2xl text-center lg:order-none lg:text-left"
             >
-              <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl text-accent font-medium tracking-wider uppercase"
-              >
+              {/* Availability status pill */}
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-4 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                Available for freelance work
+              </span>
+
+              <span className="eyebrow justify-center lg:justify-start">
                 Web Developer | WordPress Full-Stack Developer
-              </motion.span>
-              
-              <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="h1 mb-6 mt-4"
-              >
-                Hello I`m <br/> 
-                <span className="text-accent relative">
+              </span>
+
+              <h1 className="h1 mt-5">
+                Hello I`m <br />
+                <span className="relative text-accent">
                   Mitz Mia Castillo
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 1, delay: 1.2 }}
-                    className="absolute bottom-0 left-0 h-1 bg-accent/30 rounded-full"
+                  <motion.span
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.9, delay: 0.9, ease: "easeOut" }}
+                    className="absolute -bottom-1 left-0 h-1 w-full origin-left rounded-full bg-accent/40"
                   />
                 </span>
-              </motion.h1>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="max-w-[600px] mb-12 text-white/80 text-lg leading-relaxed"
-              >
-                A hardworking, adaptable and collaborative developer who is passionate about helping clients turn their visions into reality. A creative problem-solver that is dedicated to creating stunning, functional websites that provide an exceptional user experience.
-              </motion.p>
-              
-              {/* CTA buttons and socials */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                className="flex flex-col xl:flex-row items-center gap-8"
-              >
-                <div className="flex flex-col sm:flex-row gap-4">
+              </h1>
+
+              <p className="mx-auto mb-10 mt-6 max-w-[600px] text-base leading-relaxed text-white/70 md:text-lg lg:mx-0">
+                A hardworking, adaptable and collaborative developer who is
+                passionate about helping clients turn their visions into
+                reality. A creative problem-solver that is dedicated to creating
+                stunning, functional websites that provide an exceptional user
+                experience.
+              </p>
+
+              {/* CTAs + socials */}
+              <div className="flex flex-col items-center gap-8 lg:flex-row">
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <Link href="/work">
-                    <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
-                      <span>View My Work</span>
-                    </Button>
+                    <Button size="lg">View My Work</Button>
                   </Link>
                   <a href="/assets/Mitz.pdf" download="Mitz_Castillo_CV.pdf">
-                    <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
-                      <span>Download CV</span>
+                    <Button variant="outline" size="lg">
+                      Download CV
                       <FiDownload />
                     </Button>
                   </a>
                 </div>
-                
-                {/* <div className="mb-8 xl:mb-0">
-                  <Social 
-                    containerStyles="flex gap-6" 
-                    iconStyles="w-12 h-12 border-2 border-accent rounded-full flex
-                    justify-center items-center text-accent text-xl hover:bg-accent
-                    hover:text-primary hover:scale-110 transition-all duration-500"
-                  />
-                </div> */}
-              </motion.div>
+
+                <Social
+                  containerStyles="flex gap-3"
+                  iconStyles="flex h-11 w-11 items-center justify-center rounded-full border border-line text-white/70 transition-all hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+                />
+              </div>
             </motion.div>
-            
-            {/* photo */}
+
+            {/* Photo */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="order-1 xl:order-none mt-[200px] mb-12 md:mt-12 xl:mt-0 xl:mb-0 flex-1 xl:max-w-xl flex justify-center xl:justify-center xl:pl-8"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="order-1 lg:order-none"
             >
               <Photo />
             </motion.div>
           </div>
         </div>
-      </motion.section>
 
-      {/* Stats Section */}
-      {/* <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-20 bg-[#1a1a1f] relative"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent/5"></div>
-        <Stats />
-      </motion.section> */}
+        {/* Scroll cue */}
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:block"
+        >
+          <div className="flex h-9 w-6 items-start justify-center rounded-full border border-white/20 p-1.5">
+            <motion.span
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="h-1.5 w-1 rounded-full bg-accent"
+            />
+          </div>
+        </motion.div>
+      </section>
 
-      {/* Tech Stack Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-20 bg-primary relative"
-      >
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-[30px] text-center xl:text-left justify-center"
-          >
-            <div className="text-center mb-12">
-              <h3 className="text-accent text-4xl font-bold mb-4">{skills.title}</h3>
-              <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                Technologies and tools I use to bring ideas to life
-              </p>
-            </div>
+      {/* ===================== TECH & TOOLS ===================== */}
+      <Section variant="surface">
+        <SectionHeading
+          eyebrow="What I work with"
+          title={<span className="text-gradient">{skills.title}</span>}
+          subtitle={skills.description}
+          className="mb-14"
+        />
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-8">
-              {skills.skillList.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  className="group"
-                >
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-full h-[120px] bg-[#232329] rounded-xl flex flex-col justify-center items-center group hover:bg-accent/10 transition-all duration-300 border border-transparent hover:border-accent/20">
-                        <div className="text-4xl group-hover:text-accent transition-all duration-300 mb-2">
-                          {skill.icon}
-                        </div>
-                        <span className="text-xs text-white/60 group-hover:text-white transition-all duration-300 capitalize text-center px-2">
-                          {skill.name}
-                        </span>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p className="capitalize">{skill.name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-6"
+        >
+          {skills.skillList.map((skill) => (
+            <motion.div key={skill.name} variants={staggerItem}>
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="card card-interactive group flex h-[120px] w-full flex-col items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-accent/70">
+                    <span className="text-4xl text-white/80 transition-colors duration-300 group-hover:text-accent">
+                      {skill.icon}
+                    </span>
+                    <span className="px-2 text-center font-mono text-xs capitalize text-white/50 transition-colors duration-300 group-hover:text-white">
+                      {skill.name}
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="capitalize">{skill.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Section>
 
-      {/* Call to Action Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-20 bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 relative"
-      >
-        <div className="container mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-4xl font-bold text-white mb-6">
-              Ready to bring your ideas to life?
-            </h3>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Let`s collaborate and create something amazing together. I`m always excited to work on new projects and challenges.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
-                <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
-                  <span>Get In Touch</span>
-                </Button>
-              </Link>
-              <Link href="/work">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
-                  <span>View Works</span>
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-    </div>
-  )
-}
+      {/* ===================== CTA ===================== */}
+      <CTA
+        title="Ready to bring your ideas to life?"
+        description="Let`s collaborate and create something amazing together. I`m always excited to work on new projects and challenges."
+        primary={{ label: "Get In Touch", href: "/contact" }}
+        secondary={{ label: "View Works", href: "/work" }}
+      />
+    </>
+  );
+};
 
-export default Home
+export default Home;
