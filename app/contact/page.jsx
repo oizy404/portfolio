@@ -1,59 +1,59 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import Reveal from "@/components/shared/Reveal";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { SelectGroup, SelectLabel } from "@radix-ui/react-select";
-
+// ---- Content (unchanged) ----------------------------------------------------
 const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "WhatsApp",
-    info: "+63 9483 474 194",
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    info: "cmitzmia@gmail.com",
-  },
-  {
-    icon: <FaMapMarkerAlt />,
-    title: "Address",
-    info: "Davao City, Philippines",
-  },
+  { icon: <FaPhoneAlt />, title: "WhatsApp", info: "+63 9483 474 194" },
+  { icon: <FaEnvelope />, title: "Email", info: "cmitzmia@gmail.com" },
+  { icon: <FaMapMarkerAlt />, title: "Address", info: "Davao City, Philippines" },
 ];
 
 const Contact = () => {
   return (
-    <motion.section
-      initial={{opacity: 0}}
-      animate={{opacity: 1, transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
-      className="py-6"
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/* form */}
-          <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] roundex-xl">
-              <h3 className="text-4xl text-accent">Let`s work together</h3>
-              <p className="text-white/60">
-              Need a Wordpress Developer / Web Developer to work with? You can send me an Email using the email provided(form below is on progress). Have a nice day!
-              </p>
-              {/* input */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" placeholder="Firstname" />
-                <Input type="text" placeholder="Lastname" />
-                <Input type="email" placeholder="Email Address" />
-                <Input type="phone" placeholder="Phone Number" />
+    <section className="section pt-28">
+      <div className="container">
+        <div className="flex flex-col gap-12 xl:flex-row xl:gap-16">
+          {/* Form */}
+          <Reveal as="div" className="order-2 xl:order-none xl:w-[55%]">
+            {/* FIX: original had typos `roundex-xl` (→ rounded-2xl) and a stray
+                hardcoded surface color; now uses the design-system card. */}
+            <form className="card flex flex-col gap-6 p-8 md:p-10">
+              <div className="space-y-3">
+                <span className="eyebrow">Contact</span>
+                <h2 className="h2 text-white">
+                  Let`s work <span className="text-accent">together</span>
+                </h2>
+                <p className="text-white/60">
+                  Need a Wordpress Developer / Web Developer to work with? You can send me an
+                  Email using the email provided(form below is on progress). Have a nice day!
+                </p>
               </div>
-              {/* select */}
+
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                <Input type="text" placeholder="Firstname" aria-label="Firstname" />
+                <Input type="text" placeholder="Lastname" aria-label="Lastname" />
+                <Input type="email" placeholder="Email Address" aria-label="Email Address" />
+                <Input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+              </div>
+
               <Select>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Select a service">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -65,34 +65,41 @@ const Contact = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/* textarea */}
-              <Textarea className="h-[200px]" placeholder="Type your message here." />
-              {/* button */}
-              <Button size="md" className="max-2-40">Send Message</Button>
+
+              <Textarea
+                className="h-[200px]"
+                placeholder="Type your message here."
+                aria-label="Message"
+              />
+
+              {/* FIX: original `max-2-40` was a typo and did nothing. */}
+              <Button size="md" className="w-full sm:w-fit sm:px-10">
+                Send Message
+              </Button>
             </form>
-          </div>
-          {/* info */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
-              {info.map((item, index)=> {
-                return (
-                  <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
-                    <div className="flex-1">
-                    <p className="text-white-60">{item.title}</p>
-                    <h3 className="text-white/60 text-lg">{item.info}</h3>
-                    </div>
-                  </li>
-                )
-              })}
+          </Reveal>
+
+          {/* Info */}
+          <Reveal as="div" delay={0.1} className="order-1 flex flex-1 items-center xl:order-none">
+            <ul className="flex w-full flex-col gap-6">
+              {info.map((item) => (
+                <li key={item.title} className="card card-interactive flex items-center gap-6 p-6">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 text-2xl text-accent">
+                    {item.icon}
+                  </div>
+                  <div>
+                    {/* FIX: original `text-white-60` was invalid (→ text-white/50). */}
+                    <p className="text-sm text-white/50">{item.title}</p>
+                    <h3 className="text-lg text-white">{item.info}</h3>
+                  </div>
+                </li>
+              ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
-    </motion.section>
-  )
+    </section>
+  );
 };
 
 export default Contact;

@@ -1,23 +1,23 @@
 "use client";
 
-import { AnimatePresence, delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const PageTransition = ({children}) => {
-    const pathname = usePathname();
+// Fades + lifts the page content into view after the stairs wipe clears.
+// (Old version painted a full-screen overlay and waited ~1s — removed for a
+// faster, lighter reveal.)
+const PageTransition = ({ children }) => {
+  const pathname = usePathname();
+
   return (
-    <AnimatePresence>
-        <div key={pathname}>
-            <motion.div 
-                initial={{opacity: 1}} 
-                animate={{
-                    opacity: 0,
-                    transition: {delay: 1, duration: 0.4, ease: "easeInOut"}
-                }}
-                className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
-            />
-        {children}</div>
-    </AnimatePresence>
+    <motion.div
+      key={pathname}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
   );
 };
 

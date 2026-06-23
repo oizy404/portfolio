@@ -1,17 +1,11 @@
 "use client";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent , TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
 import {
   FaHtml5,
   FaCss3,
   FaJs,
-  FaReact,
   FaNodeJs,
   FaGraduationCap,
   FaBriefcase,
@@ -24,67 +18,78 @@ import {
   FaGlobe,
   FaAward,
 } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiJquery,
+  SiGithub,
+  SiGit,
+  SiBitbucket,
+  SiWordpress,
+  SiWoocommerce,
+  SiBootstrap,
+  SiMysql,
+  SiPostman,
+  SiFigma,
+  SiCanva,
+  SiPhp,
+} from "react-icons/si";
 
-import { SiTailwindcss, SiNextdotjs, SiJquery, SiGithub, SiGit, SiBitbucket, SiWordpress, SiWoocommerce, SiBootstrap, SiMysql, SiPostman, SiFigma, SiCanva, SiPhp }from "react-icons/si";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
 
+import Section from "@/components/shared/Section";
+import SectionHeading from "@/components/shared/SectionHeading";
+import Reveal from "@/components/shared/Reveal";
+import CTA from "@/components/shared/CTA";
+import { staggerContainer, staggerItem } from "@/lib/motion";
+
+// ---- Content (unchanged) ----------------------------------------------------
 const about = {
-  title: 'About Me',
-  description: "Hello! I'm Mitz Castillo, a passionate Web Developer and WordPress Developer based in Davao City, Philippines. I have been a WordPress Developer for three years and have gained extensive experience handling tasks and projects as a full-stack developer. Currently working as a Freelance WordPress Developer since April 2023, I specialize in custom WordPress development, WooCommerce solutions, and website optimization. I am adaptable to various tools and technologies and always open to learning new skills and embracing opportunities for growth. My goal is to provide exceptional web solutions that meet clients' needs and exceed their expectations.",
+  title: "About Me",
+  description:
+    "Hello! I'm Mitz Castillo, a passionate Web Developer and WordPress Developer based in Davao City, Philippines. I have been a WordPress Developer for three years and have gained extensive experience handling tasks and projects as a full-stack developer. Currently working as a Freelance WordPress Developer since April 2023, I specialize in custom WordPress development, WooCommerce solutions, and website optimization. I am adaptable to various tools and technologies and always open to learning new skills and embracing opportunities for growth. My goal is to provide exceptional web solutions that meet clients' needs and exceed their expectations.",
   info: [
-    {
-      fieldName: "Full Name",
-      fieldValue: "Mitz Mia Castillo",
-      icon: <FaUser className="text-accent" />
-    },
-    {
-      fieldName: "WhatsApp",
-      fieldValue: "+63 9483 474 194",
-      icon: <FaPhone className="text-accent" />
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "3+ Years",
-      icon: <FaBriefcase className="text-accent" />
-    },
-    {
-      fieldName: "Location",
-      fieldValue: "Davao City, Philippines",
-      icon: <FaMapMarkerAlt className="text-accent" />
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "cmitzmia@gmail.com",
-      icon: <FaEnvelope className="text-accent" />
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Filipino",
-      icon: <FaGlobe className="text-accent" />
-    },
-  ]
-}
+    { fieldName: "Full Name", fieldValue: "Mitz Mia Castillo", icon: <FaUser /> },
+    { fieldName: "WhatsApp", fieldValue: "+63 9483 474 194", icon: <FaPhone /> },
+    { fieldName: "Experience", fieldValue: "3+ Years", icon: <FaBriefcase /> },
+    { fieldName: "Location", fieldValue: "Davao City, Philippines", icon: <FaMapMarkerAlt /> },
+    { fieldName: "Email", fieldValue: "cmitzmia@gmail.com", icon: <FaEnvelope /> },
+    { fieldName: "Languages", fieldValue: "English, Filipino", icon: <FaGlobe /> },
+  ],
+};
 
 const experience = {
   icon: <FaBriefcase className="text-accent" />,
   title: "My Experience",
-  description: "Professional journey and career milestones in web development and WordPress development.",
+  description:
+    "Professional journey and career milestones in web development and WordPress development.",
   items: [
     {
       company: "",
       position: "Freelance WordPress Developer",
       duration: "2024-2025",
-      description: "Freelance WordPress development services specializing in custom implementations and client collaboration.",
+      description:
+        "Freelance WordPress development services specializing in custom implementations and client collaboration.",
       achievements: [
         "Apply Figma designs accurately to WordPress websites",
         "Fix WordPress Issues",
-        "Collaborate directly with clients"
-      ]
+        "Collaborate directly with clients",
+      ],
     },
     {
       company: "",
       position: "WordPress Woocommerce Developer",
       duration: "2022 - 2025",
-      description: "Full-stack WordPress and WooCommerce development with focus on maintenance, customization, and optimization.",
+      description:
+        "Full-stack WordPress and WooCommerce development with focus on maintenance, customization, and optimization.",
       achievements: [
         "Maintain & Build WordPress/WooCommerce Websites",
         "Update WordPress/WooCommerce Website",
@@ -97,45 +102,46 @@ const experience = {
         "Manage multiple WordPress/WooCommerce sites using different hosting server",
         "Apply on page SEO practices",
         "Review and test web implementations",
-        "Communicate directly with the clients"
-      ]
+        "Communicate directly with the clients",
+      ],
     },
     {
       company: "",
       position: "Trainee Web Developer",
       duration: "2021-2022",
-      description: "Completed comprehensive web development training with hands-on project experience.",
+      description:
+        "Completed comprehensive web development training with hands-on project experience.",
       achievements: [
         "Create a Performance Evaluation System, using the following:",
         "LARAVEL Framework",
         "HTML5 & CSS",
-        "JS"
-      ]
+        "JS",
+      ],
     },
-  ]
-}
+  ],
+};
 
 const education = {
   icon: <FaGraduationCap className="text-accent" />,
   title: "Education",
-  description: "Academic background and formal education in Information Technology and web development.",
+  description:
+    "Academic background and formal education in Information Technology and web development.",
   items: [
     {
       institution: "Assumption College of Davao",
       degree: "Bachelor of Science in Information Technology",
       duration: "2018 - 2022",
-      description: "Comprehensive study of computer science fundamentals, software development, database management, and web technologies.",
+      description:
+        "Comprehensive study of computer science fundamentals, software development, database management, and web technologies.",
       achievements: [
-        // "Graduated with honors",
-        // "Dean's List for 3 consecutive semesters",
         "Completed capstone project in web development",
-        "Active member of IT Student Organization"
-      ]
+        "Active member of IT Student Organization",
+      ],
     },
-  ]
-}
+  ],
+};
 
-// Certifications and achievements
+// Certifications data preserved (tab intentionally hidden, as in the original).
 const certifications = {
   icon: <FaAward className="text-accent" />,
   title: "Certifications & Achievements",
@@ -145,26 +151,29 @@ const certifications = {
       title: "WordPress Development Certification",
       issuer: "Online Course Platform",
       duration: "2022",
-      description: "Advanced WordPress development including custom themes, plugins, and WooCommerce."
+      description:
+        "Advanced WordPress development including custom themes, plugins, and WooCommerce.",
     },
     {
       title: "Responsive Web Design Certification",
       issuer: "FreeCodeCamp",
       duration: "2021",
-      description: "HTML5, CSS3, Flexbox, CSS Grid, and responsive design principles."
+      description: "HTML5, CSS3, Flexbox, CSS Grid, and responsive design principles.",
     },
     {
       title: "JavaScript Algorithms and Data Structures",
       issuer: "FreeCodeCamp",
       duration: "2021",
-      description: "ES6, Regular Expressions, Debugging, Data Structures, and Algorithm Scripting."
+      description:
+        "ES6, Regular Expressions, Debugging, Data Structures, and Algorithm Scripting.",
     },
-  ]
-}
+  ],
+};
 
 const skills = {
   title: "Tech & Tools",
-  description: "Technologies and tools I use to build modern, responsive, and scalable web applications.",
+  description:
+    "Technologies and tools I use to build modern, responsive, and scalable web applications.",
   categories: {
     frontend: {
       title: "Frontend Development",
@@ -176,7 +185,7 @@ const skills = {
         { icon: <SiTailwindcss />, name: "Tailwind CSS", level: "Advanced" },
         { icon: <SiBootstrap />, name: "Bootstrap", level: "Advanced" },
         { icon: <SiJquery />, name: "jQuery", level: "Advanced" },
-      ]
+      ],
     },
     backend: {
       title: "Backend Development",
@@ -184,14 +193,14 @@ const skills = {
         { icon: <SiPhp />, name: "PHP", level: "Advanced" },
         { icon: <FaNodeJs />, name: "Node.js", level: "Basic" },
         { icon: <SiMysql />, name: "MySQL", level: "Advanced" },
-      ]
+      ],
     },
     cms: {
       title: "CMS & E-commerce",
       skills: [
         { icon: <SiWordpress />, name: "WordPress", level: "Expert" },
         { icon: <SiWoocommerce />, name: "WooCommerce", level: "Expert" },
-      ]
+      ],
     },
     tools: {
       title: "Development Tools",
@@ -202,438 +211,277 @@ const skills = {
         { icon: <SiPostman />, name: "Postman", level: "Intermediate" },
         { icon: <SiFigma />, name: "Figma", level: "Intermediate" },
         { icon: <SiCanva />, name: "Canva", level: "Intermediate" },
-      ]
-    }
-  }
-}
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
+      ],
     },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
+// Proficiency badges: monochrome scale with the lime accent reserved for the
+// top tier — brighter = higher level. Keeps the palette cohesive.
+const levelStyles = {
+  Expert: "bg-accent/15 text-accent",
+  Advanced: "bg-white/10 text-white/85",
+  Intermediate: "bg-white/[0.07] text-white/60",
+  Basic: "bg-white/5 text-white/45",
 };
+
+// ---- Shared timeline card (used by Experience + Education) -------------------
+const TimelineCard = ({ duration, title, subtitle, description, achievements, heading }) => (
+  <motion.div variants={staggerItem} className="card card-interactive p-8">
+    <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+      <div className="lg:w-1/3">
+        <span className="tag-accent mb-3">{duration}</span>
+        <h4 className="mb-2 text-xl font-bold text-white">{title}</h4>
+        {subtitle && <p className="font-medium text-accent">{subtitle}</p>}
+      </div>
+      <div className="lg:w-2/3">
+        <p className="mb-4 leading-relaxed text-white/60">{description}</p>
+        <h5 className="mb-3 font-semibold text-white">{heading}</h5>
+        <ul className="space-y-2">
+          {achievements.map((item, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+              <span className="text-white/60">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </motion.div>
+);
 
 const Resume = () => {
   return (
-    <div className="min-h-screen bg-primary">
-      {/* Hero Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 relative"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent/5"></div>
-        <div className="container mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+    <>
+      {/* ===================== HERO ===================== */}
+      <Section variant="accent" className="section-sm pt-28">
+        <SectionHeading
+          eyebrow="Get to know me"
+          title={
+            <>
               About <span className="text-accent">Me</span>
-            </h1>
-            <p className="text-white/80 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-              Passionate WordPress Developer with 2+ years of experience creating exceptional web solutions.
-              Explore my journey, skills, and achievements.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
-                <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
-                  <span>Get In Touch</span>
-                </Button>
-              </Link>
-              <a href="/assets/Mitz.pdf" download="Mitz_Castillo_CV.pdf">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
-                  <FaDownload className="text-lg" />
-                  <span>Download CV</span>
-                </Button>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
+            </>
+          }
+          subtitle="Passionate WordPress Developer with 3+ years of experience creating exceptional web solutions. Explore my journey, skills, and achievements."
+        />
+        <Reveal delay={0.1} className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link href="/contact">
+            <Button size="lg">Get In Touch</Button>
+          </Link>
+          <a href="/assets/Mitz.pdf" download="Mitz_Castillo_CV.pdf">
+            <Button variant="outline" size="lg">
+              <FaDownload />
+              Download CV
+            </Button>
+          </a>
+        </Reveal>
+      </Section>
 
-      {/* Main Content */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="py-20"
-      >
-        <div className="container mx-auto">
-          <Tabs
-            defaultValue="about"
-            className="flex flex-col xl:flex-row gap-[60px]"
-          >
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 bg-[#1a1a1f] p-6 rounded-xl">
-                <TabsTrigger value="about" className="w-full justify-start gap-3 text-left">
-                  <FaUser className="text-lg" />
-                  About Me
+      {/* ===================== TABS ===================== */}
+      <Section>
+        <Tabs defaultValue="about" className="flex flex-col gap-12 xl:flex-row xl:gap-16">
+          {/* Tab list */}
+          <Reveal as="div" className="xl:w-[320px] xl:flex-shrink-0">
+            <TabsList className="card flex w-full flex-col gap-3 p-4 xl:sticky xl:top-28">
+              {[
+                { value: "about", icon: <FaUser />, label: "About Me" },
+                { value: "experience", icon: <FaBriefcase />, label: "Experience" },
+                { value: "education", icon: <FaGraduationCap />, label: "Education" },
+                { value: "skills", icon: <FaTools />, label: "Tech & Tools" },
+              ].map((tab) => (
+                <TabsTrigger key={tab.value} value={tab.value} className="justify-start gap-3">
+                  {tab.icon}
+                  {tab.label}
                 </TabsTrigger>
-                <TabsTrigger value="experience" className="w-full justify-start gap-3 text-left">
-                  <FaBriefcase className="text-lg" />
-                  Experience
-                </TabsTrigger>
-                <TabsTrigger value="education" className="w-full justify-start gap-3 text-left">
-                  <FaGraduationCap className="text-lg" />
-                  Education
-                </TabsTrigger>
-                {/* <TabsTrigger value="certifications" className="w-full justify-start gap-3 text-left">
-                  <FaAward className="text-lg" />
-                  Certifications
-                </TabsTrigger> */}
-                <TabsTrigger value="skills" className="w-full justify-start gap-3 text-left">
-                  <FaTools className="text-lg" />
-                  Tech & Tools
-                </TabsTrigger>
-              </TabsList>
-            </motion.div>
-            {/* Tab Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="min-h-[70vh] w-full"
-            >
-              {/* About Me */}
-              <TabsContent value="about" className="w-full">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex flex-col gap-[30px] text-center xl:text-left"
-                >
-                  <motion.div variants={itemVariants}>
-                    <h3 className="text-4xl font-bold flex items-center gap-3 justify-center xl:justify-start">
-                      {about.icon || <FaUser className="text-accent" />}
-                      {about.title}
-                    </h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mt-4 leading-relaxed">
-                      {about.description}
-                    </p>
-                  </motion.div>
+              ))}
+            </TabsList>
+          </Reveal>
 
-                  <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[800px] mx-auto xl:mx-0">
-                    {about.info.map((item, index) => (
-                      <motion.div
-                        key={index}
-                        variants={itemVariants}
-                        className="bg-[#1a1a1f] p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                            {item.icon}
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-white/60 text-sm">{item.fieldName}</p>
-                            <p className="text-white font-medium">{item.fieldValue}</p>
-                          </div>
+          {/* Tab content */}
+          <div className="min-h-[60vh] w-full">
+            {/* About */}
+            <TabsContent value="about">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-8"
+              >
+                <motion.div variants={staggerItem}>
+                  <h3 className="flex items-center gap-3 text-3xl font-bold">
+                    <FaUser className="text-accent" />
+                    {about.title}
+                  </h3>
+                  <p className="mt-4 max-w-2xl leading-relaxed text-white/60">
+                    {about.description}
+                  </p>
+                </motion.div>
+
+                <div className="grid max-w-3xl grid-cols-1 gap-5 md:grid-cols-2">
+                  {about.info.map((item) => (
+                    <motion.div
+                      key={item.fieldName}
+                      variants={staggerItem}
+                      className="card card-interactive p-5"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                          {item.icon}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-sm text-white/50">{item.fieldName}</p>
+                          <p className="truncate font-medium text-white">{item.fieldValue}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </TabsContent>
+
+            {/* Experience */}
+            <TabsContent value="experience">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-8"
+              >
+                <motion.div variants={staggerItem}>
+                  <h3 className="flex items-center gap-3 text-3xl font-bold">
+                    {experience.icon}
+                    {experience.title}
+                  </h3>
+                  <p className="mt-4 max-w-2xl text-white/60">{experience.description}</p>
+                </motion.div>
+
+                <ScrollArea className="h-[520px] pr-4">
+                  <div className="space-y-6">
+                    {experience.items.map((item, i) => (
+                      <TimelineCard
+                        key={i}
+                        duration={item.duration}
+                        title={item.position}
+                        subtitle={item.company}
+                        description={item.description}
+                        achievements={item.achievements}
+                        heading="Key Achievements:"
+                      />
+                    ))}
+                  </div>
+                </ScrollArea>
+              </motion.div>
+            </TabsContent>
+
+            {/* Education */}
+            <TabsContent value="education">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-8"
+              >
+                <motion.div variants={staggerItem}>
+                  <h3 className="flex items-center gap-3 text-3xl font-bold">
+                    {education.icon}
+                    {education.title}
+                  </h3>
+                  <p className="mt-4 max-w-2xl text-white/60">{education.description}</p>
+                </motion.div>
+
+                <ScrollArea className="h-[520px] pr-4">
+                  <div className="space-y-6">
+                    {education.items.map((item, i) => (
+                      <TimelineCard
+                        key={i}
+                        duration={item.duration}
+                        title={item.degree}
+                        subtitle={item.institution}
+                        description={item.description}
+                        achievements={item.achievements}
+                        heading="Achievements:"
+                      />
+                    ))}
+                  </div>
+                </ScrollArea>
+              </motion.div>
+            </TabsContent>
+
+            {/* Skills */}
+            <TabsContent value="skills">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-8"
+              >
+                <motion.div variants={staggerItem}>
+                  <h3 className="flex items-center gap-3 text-3xl font-bold">
+                    <FaTools className="text-accent" />
+                    {skills.title}
+                  </h3>
+                  <p className="mt-4 max-w-2xl text-white/60">{skills.description}</p>
+                </motion.div>
+
+                <ScrollArea className="h-[600px] pr-4">
+                  <div className="space-y-12">
+                    {Object.entries(skills.categories).map(([key, category], categoryIndex) => (
+                      <motion.div key={key} variants={staggerItem} className="space-y-6">
+                        <h4 className="flex items-center gap-3 text-2xl font-bold text-white">
+                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent">
+                            {categoryIndex + 1}
+                          </span>
+                          {category.title}
+                        </h4>
+
+                        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+                          {category.skills.map((skill) => (
+                            <TooltipProvider key={skill.name} delayDuration={100}>
+                              <Tooltip>
+                                <TooltipTrigger className="card card-interactive group w-full p-6">
+                                  <div className="flex flex-col items-center gap-3">
+                                    <span className="text-4xl text-white/80 transition-colors duration-300 group-hover:text-accent">
+                                      {skill.icon}
+                                    </span>
+                                    <div className="text-center">
+                                      <p className="text-sm font-medium text-white">{skill.name}</p>
+                                      <span
+                                        className={`mt-2 inline-block rounded-full px-2 py-1 text-xs font-medium ${
+                                          levelStyles[skill.level] || levelStyles.Basic
+                                        }`}
+                                      >
+                                        {skill.level}
+                                      </span>
+                                    </div>
+                                  </div>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <p className="capitalize">
+                                    {skill.name} - {skill.level}
+                                  </p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          ))}
                         </div>
                       </motion.div>
                     ))}
-                  </motion.div>
-                </motion.div>
-              </TabsContent>
+                  </div>
+                </ScrollArea>
+              </motion.div>
+            </TabsContent>
+          </div>
+        </Tabs>
+      </Section>
 
-              {/* Experience */}
-              <TabsContent value="experience" className="w-full">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex flex-col gap-[30px] text-center xl:text-left"
-                >
-                  <motion.div variants={itemVariants}>
-                    <h3 className="text-4xl font-bold flex items-center gap-3 justify-center xl:justify-start">
-                      {experience.icon}
-                      {experience.title}
-                    </h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mt-4">
-                      {experience.description}
-                    </p>
-                  </motion.div>
-
-                  <ScrollArea className="h-[500px]">
-                    <div className="space-y-8">
-                      {experience.items.map((item, index) => (
-                        <motion.div
-                          key={index}
-                          variants={itemVariants}
-                          className="bg-[#1a1a1f] p-8 rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300"
-                        >
-                          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                            <div className="lg:w-1/3">
-                              <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-3">
-                                {item.duration}
-                              </div>
-                              <h4 className="text-xl font-bold text-white mb-2">{item.position}</h4>
-                              <p className="text-accent font-medium">{item.company}</p>
-                            </div>
-                            <div className="lg:w-2/3">
-                              <p className="text-white/70 mb-4 leading-relaxed">{item.description}</p>
-                              <div className="space-y-2">
-                                <h5 className="text-white font-semibold mb-3">Key Achievements:</h5>
-                                <ul className="space-y-2">
-                                  {item.achievements.map((achievement, achIndex) => (
-                                    <li key={achIndex} className="flex items-start gap-3">
-                                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
-                                      <span className="text-white/70">{achievement}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </motion.div>
-              </TabsContent>
-              {/* Education */}
-              <TabsContent value="education" className="w-full">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex flex-col gap-[30px] text-center xl:text-left"
-                >
-                  <motion.div variants={itemVariants}>
-                    <h3 className="text-4xl font-bold flex items-center gap-3 justify-center xl:justify-start">
-                      {education.icon}
-                      {education.title}
-                    </h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mt-4">
-                      {education.description}
-                    </p>
-                  </motion.div>
-
-                  <ScrollArea className="h-[500px]">
-                    <div className="space-y-8">
-                      {education.items.map((item, index) => (
-                        <motion.div
-                          key={index}
-                          variants={itemVariants}
-                          className="bg-[#1a1a1f] p-8 rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300"
-                        >
-                          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                            <div className="lg:w-1/3">
-                              <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-3">
-                                {item.duration}
-                              </div>
-                              <h4 className="text-xl font-bold text-white mb-2">{item.degree}</h4>
-                              <p className="text-accent font-medium">{item.institution}</p>
-                            </div>
-                            <div className="lg:w-2/3">
-                              <p className="text-white/70 mb-4 leading-relaxed">{item.description}</p>
-                              <div className="space-y-2">
-                                <h5 className="text-white font-semibold mb-3">Achievements:</h5>
-                                <ul className="space-y-2">
-                                  {item.achievements.map((achievement, achIndex) => (
-                                    <li key={achIndex} className="flex items-start gap-3">
-                                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
-                                      <span className="text-white/70">{achievement}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </motion.div>
-              </TabsContent>
-
-              {/* Certifications */}
-              <TabsContent value="certifications" className="w-full">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex flex-col gap-[30px] text-center xl:text-left"
-                >
-                  <motion.div variants={itemVariants}>
-                    <h3 className="text-4xl font-bold flex items-center gap-3 justify-center xl:justify-start">
-                      {certifications.icon}
-                      {certifications.title}
-                    </h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mt-4">
-                      {certifications.description}
-                    </p>
-                  </motion.div>
-
-                  <ScrollArea className="h-[500px]">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {certifications.items.map((item, index) => (
-                        <motion.div
-                          key={index}
-                          variants={itemVariants}
-                          className="bg-[#1a1a1f] p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300"
-                        >
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                              <FaAward className="text-accent text-xl" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium mb-3">
-                                {item.duration}
-                              </div>
-                              <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
-                              <p className="text-accent font-medium mb-3">{item.issuer}</p>
-                              <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </motion.div>
-              </TabsContent>
-              {/* Skills */}
-              <TabsContent value="skills" className="w-full">
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex flex-col gap-[30px] text-center xl:text-left"
-                >
-                  <motion.div variants={itemVariants}>
-                    <h3 className="text-4xl font-bold flex items-center gap-3 justify-center xl:justify-start">
-                      <FaTools className="text-accent" />
-                      {skills.title}
-                    </h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mt-4">
-                      {skills.description}
-                    </p>
-                  </motion.div>
-
-                  <ScrollArea className="h-[600px]">
-                    <div className="space-y-12">
-                      {Object.entries(skills.categories).map(([categoryKey, category], categoryIndex) => (
-                        <motion.div
-                          key={categoryKey}
-                          variants={itemVariants}
-                          className="space-y-6"
-                        >
-                          <h4 className="text-2xl font-bold text-white flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-                              <span className="text-accent font-bold text-sm">{categoryIndex + 1}</span>
-                            </div>
-                            {category.title}
-                          </h4>
-
-                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {category.skills.map((skill, skillIndex) => (
-                              <motion.div
-                                key={skillIndex}
-                                variants={itemVariants}
-                                className="group"
-                              >
-                                <TooltipProvider delayDuration={100}>
-                                  <Tooltip>
-                                    <TooltipTrigger className="w-full">
-                                      <div className="bg-[#1a1a1f] p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300 group-hover:scale-105">
-                                        <div className="flex flex-col items-center gap-3">
-                                          <div className="text-4xl group-hover:text-accent transition-all duration-300">
-                                            {skill.icon}
-                                          </div>
-                                          <div className="text-center">
-                                            <p className="text-white font-medium text-sm">{skill.name}</p>
-                                            <div className="mt-2">
-                                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                                skill.level === 'Expert' ? 'bg-green-500/20 text-green-400' :
-                                                skill.level === 'Advanced' ? 'bg-blue-500/20 text-blue-400' :
-                                                'bg-yellow-500/20 text-yellow-400'
-                                              }`}>
-                                                {skill.level}
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                      <p className="capitalize">{skill.name} - {skill.level}</p>
-                                    </TooltipContent>
-                                  </Tooltip>
-                                </TooltipProvider>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </motion.div>
-              </TabsContent>
-            </motion.div>
-          </Tabs>
-        </div>
-      </motion.div>
-
-      {/* Call to Action Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-20 bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 relative"
-      >
-        <div className="container mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-4xl font-bold text-white mb-6">
-              Let`s Work Together
-            </h3>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Ready to bring your project to life? I`m always excited to work on new challenges
-              and help clients achieve their goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
-                <Button variant="default" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg font-semibold">
-                  <span>Start a Project</span>
-                </Button>
-              </Link>
-              <Link href="/work">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 px-8 py-6 text-lg">
-                  <span>View My Work</span>
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-    </div>
+      {/* ===================== CTA ===================== */}
+      <CTA
+        title="Let`s Work Together"
+        description="Ready to bring your project to life? I`m always excited to work on new challenges and help clients achieve their goals."
+        primary={{ label: "Start a Project", href: "/contact" }}
+        secondary={{ label: "View My Work", href: "/work" }}
+      />
+    </>
   );
 };
 
