@@ -59,7 +59,7 @@ const about = {
   info: [
     { fieldName: "Full Name", fieldValue: "Mitz Mia Castillo", icon: <FaUser /> },
     { fieldName: "WhatsApp", fieldValue: "+63 9483 474 194", icon: <FaPhone /> },
-    { fieldName: "Experience", fieldValue: "3+ Years", icon: <FaBriefcase /> },
+    { fieldName: "Experience", fieldValue: "4+ Years", icon: <FaBriefcase /> },
     { fieldName: "Location", fieldValue: "Davao City, Philippines", icon: <FaMapMarkerAlt /> },
     { fieldName: "Email", fieldValue: "cmitzmia@gmail.com", icon: <FaEnvelope /> },
     { fieldName: "Languages", fieldValue: "English, Filipino", icon: <FaGlobe /> },
@@ -262,7 +262,7 @@ const Resume = () => {
               About <span className="text-accent">Me</span>
             </>
           }
-          subtitle="Passionate WordPress Developer with 3+ years of experience creating exceptional web solutions. Explore my journey, skills, and achievements."
+          subtitle="Passionate WordPress Developer with 4+ years of experience creating exceptional web solutions. Explore my journey, skills, and achievements."
         />
         <Reveal delay={0.1} className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href="/contact">
