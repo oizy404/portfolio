@@ -20,6 +20,8 @@ import {
   FaDatabase,
   FaPlug,
   FaPalette,
+  FaExchangeAlt,
+  FaNetworkWired,
 } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
@@ -243,6 +245,22 @@ const additionalServices = [
     description:
       "Custom API integrations and third-party service connections to extend your website functionality and automate business processes.",
     icon: <FaPlug className="text-2xl" />,
+    category: "Additional",
+  },
+  {
+    num: "27",
+    title: "Website Migration & Hosting Transfer",
+    description:
+      "Seamless website migrations between hosting providers (e.g. WP Engine to Kinsta) with zero data loss and minimal downtime. Includes full site transfer, database migration, environment configuration, and post-migration testing.",
+    icon: <FaExchangeAlt className="text-2xl" />,
+    category: "Additional",
+  },
+  {
+    num: "28",
+    title: "CDN Setup & DNS Configuration",
+    description:
+      "Configuring Bunny.net CDN for faster global content delivery and migrating DNS records between providers (e.g. CrazyDomains to Bunny). Includes nameserver setup, record mapping, SSL, and propagation verification.",
+    icon: <FaNetworkWired className="text-2xl" />,
     category: "Additional",
   },
 ];

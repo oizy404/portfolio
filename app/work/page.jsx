@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { BsEye, BsCode, BsCalendar3 } from "react-icons/bs";
-import { FaWordpress, FaLaravel, FaCss3Alt } from "react-icons/fa";
+import { FaWordpress, FaLaravel, FaCss3Alt, FaServer, FaCloud, FaNetworkWired } from "react-icons/fa";
 import { SiElementor, SiMysql, SiBootstrap, SiJquery } from "react-icons/si";
 
 import { Button } from "@/components/ui/button";
@@ -176,6 +176,32 @@ const projects = [
     live: "",
     github: "",
     duration: "1 day",
+    client: "Upwork Client",
+    year: "2025",
+  },
+  {
+    num: "07",
+    category: "Hosting Migration & DNS",
+    title: "WP Engine to Kinsta Migration with Bunny CDN",
+    description:
+      "Migrated Non WooCommerce WordPress sites and WooCommerce WordPress sites from WP Engine to Kinsta with zero data loss and minimal downtime, then configured Bunny.net CDN for faster global delivery and moved the DNS records from CrazyDomains to Bunny.",
+    features: [
+      "Full site and database migration from WP Engine to Kinsta",
+      "Environment configuration and post-migration testing",
+      "Bunny.net CDN setup for global content delivery",
+      "DNS migration from CrazyDomains to Bunny",
+      "Nameserver, SSL, and propagation verification",
+    ],
+    stack: [
+      { name: "WordPress", icon: <FaWordpress /> },
+      { name: "Kinsta", icon: <FaServer /> },
+      { name: "Bunny CDN", icon: <FaCloud /> },
+      { name: "DNS", icon: <FaNetworkWired /> },
+    ],
+    image: "/assets/work/site-migration_1.png",
+    live: "",
+    github: "",
+    duration: "1 week",
     client: "Upwork Client",
     year: "2025",
   },
